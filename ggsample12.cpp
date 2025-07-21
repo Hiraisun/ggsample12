@@ -100,7 +100,7 @@ int GgApp::main(int argc, const char* const* argv)
     const auto mp{ ggPerspective(0.5f, window.getAspect(), 1.0f, 15.0f) };
 
     // 鏡像用のシェーダの選択
-    mirror.use(mp, mv * mm * window.getRotationMatrix(), lightBuffer);
+    mirror.use(mp, mv * mr * mm * window.getRotationMatrix(), lightBuffer);
     lightBuffer.loadPosition(reflected.data());
 
     // 鏡像の描画

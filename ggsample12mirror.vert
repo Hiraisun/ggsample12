@@ -37,7 +37,7 @@ void main(void)
   vec4 p = mv * pv;                                   // 視点座標系の頂点の位置
   vec3 v = normalize(p.xyz);                          // 視線ベクトル
   vec3 l = normalize((lpos * p.w - p * lpos.w).xyz);  // 光線ベクトル
-  vec3 n = normalize((mn * nv).xyz);                  // 法線ベクトル
+  vec3 n = -normalize((mn * nv).xyz);             // 法線ベクトル   // 反転----------------
   vec3 h = normalize(l - v);                          // 中間ベクトル
 
   // 陰影計算
